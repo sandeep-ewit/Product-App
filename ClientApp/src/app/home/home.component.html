@@ -1,0 +1,51 @@
+<div style="width: 100%;
+    text-align: center; margin:0 auto;">
+  <table style="width:40%;">
+    <tr>
+      <td style="float:left;">Product Name</td>
+      <td>
+        <input maxlength="500" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" type="text" [formControl]="pNameCtrl"/>
+        <input type="text" [formControl]="idCtrl" hidden/>
+      </td>
+    </tr>
+    <tr>
+      <td style="float:left;">Product Description</td>
+      <td><input max="1000" type="text" [formControl]="pDescCtrl"/></td>
+    </tr>
+    <tr>
+      <td style="float:left;">Price</td>
+      <td><input type="number" [formControl]="pPriceCtrl"/></td>
+    </tr>
+    <tr>
+      <td style="float:left;">Discount</td>
+      <td><input type="number" [formControl]="pDiscount"/></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><button class="btn btn-primary" (click)="updateProduct()">Save</button>
+    </tr>
+  </table>
+</div>
+<hr />
+<div style="width:100%; margin-left:15px;margin-right:15px;">
+  <table border="1">
+    <thead>
+      <tr style="font-weight:bold;">
+        <td style="width:10%">ID</td>
+        <td style="width:20%">Product Name</td>
+        <td style="width:40%">Product Description</td>
+        <td style="width:10%">Price</td>
+        <td style="width:10%">Discount</td>
+        <td style="width:10%">Action</td>
+      </tr>
+      <tr *ngFor="let product of productList">
+        <td>{{product.id}}</td>
+        <td><a href="#" title="Click to edit" (click)="editProduct(product)">{{product.productName}}</a></td>
+        <td>{{product.productDescription}}</td>
+        <td>{{product.price}}</td>
+        <td>{{product.discount}}</td>
+        <td><a href="#" (click)="deleteProduct(product)">Delete</a></td>
+      </tr>
+    </thead>
+  </table>
+</div>

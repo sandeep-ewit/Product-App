@@ -88,7 +88,7 @@ export class HomeComponent {
   }
 
   private ClearFields() {
-    this.idCtrl.setValue('');
+    //this.idCtrl.setValue('');
     this.pNameCtrl.setValue('');
     this.pDescCtrl.setValue('');
     this.pPriceCtrl.setValue('');

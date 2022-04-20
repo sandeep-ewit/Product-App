@@ -1,3 +1,9 @@
+# How to make database connection (For Sql server)
+Change connection string in the appsettings.json
+Create a Product table in your database
+Create a procedure that gets the table data (replace the procedure name in DataContext.cs with yours)
+
+
 # ProductApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
